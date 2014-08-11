@@ -1,28 +1,15 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+====Rails部署Workshop
 
-Things you may want to cover:
+一个简单地web计算器，用于练习如何部署Rails应用。先用unicorn和Apache+passenger分别部署整个Rails App；最后再改用nginx做反向代理，Rails应用的主页由nginx代理转发到Apache+passenger部署的server，而实现计
+功能的请求由nginx转发到unicorn server上处理，app用到的静态文件（image、js、css）直接由nginx响应请求。部署结构图在public/images/structure.jpg里。感兴趣的同学可以把代码下下来练习一下。
 
-* Ruby version
+* Unicorn + Rails（reference  https://github.com/defunkt/unicorn）
+ 1）gem install unicorn
+ 2）在rails app的config文件夹下创建unicorn.rb文件（example  https://github.com/defunkt/unicorn/blob/master/examples/unicorn.conf.rb）
+ 3）运行unicorn（unicorn_rails -c config/unicorn.rb -E development -D）
 
-* System dependencies
+* Apache + Passenger + Rails （reference  http://binku.iteye.com/blog/483687）
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Nginx反向代理（reference  http://www.nginx.cn/install, http://www.nginx.cn/doc/index.html）
