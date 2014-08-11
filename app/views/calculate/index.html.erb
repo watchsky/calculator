@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <input type="text" id="number1" name="number1" size="15"/>
+    <select id="op" name="op">
+      <option value="+" selected="selected">+</option>
+      <option value="-">-</option>
+    </select>
+    <input type="text" id="number2" name="number2" size="15"/>
+    <input type="button" id="calculate" name="calculate" value="Calculate" onclick="getResult()"/>
+    
+    <p>Result:</p>
+    <textarea rows="3" cols="25" id="result"></textarea>
+
+  </body>
+</html>

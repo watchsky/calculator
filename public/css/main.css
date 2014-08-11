@@ -1,0 +1,27 @@
+#number1, #number2 {
+  border: 1px solid #000000;
+  height: 20px;
+  font-size: 20px;
+}
+
+#calculate {
+  font-size: 25px;
+}
+
+#op {
+  width: 50px;
+}
+
+#result {
+  font-size: 20px;
+}
+
+body {
+  background-image: url(/images/p2.jpg);
+  background-repeat: no-repeat;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 0;
+}
