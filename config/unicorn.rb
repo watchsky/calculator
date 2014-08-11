@@ -5,7 +5,6 @@ log_file = root_path + '/log/unicorn.log'
 err_log  = root_path + '/log/unicorn_error.log'
 
 pid_file = root_path + '/tmp/unicorn_padrino.pid'
-old_pid = pid_file + '.oldbin'
 
 socket_file = root_path + '/tmp/unicorn_padrino.sock'
 
@@ -23,15 +22,10 @@ stdout_path log_file
 preload_app true
 
 before_exec do |server|
+  puts "restart"
   ENV['BUNDLE_GEMFILE'] = root_path + '/Gemfile'
 end
 
 before_fork do |server, worker|
-  if File.exists?(old_pid) && server.pid != old_pid
-    begin
-      Process.kill('QUIT', File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-      puts "Send 'QUIT' signal to unicorn error!"
-    end
-  end
+  puts "start"
 end

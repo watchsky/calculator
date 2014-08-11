@@ -12,6 +12,6 @@ case "$1" in
   kill -QUIT `cat /home/xiangwu/Project/calculator/tmp/unicorn_padrino.pid`
   ;;
   restart|force-reload)
-  kill -USR2 'cat /home/xiangwu/Project/calculator/tmp/unicorn_padrino.pid'
+  kill -USR2 `cat /home/xiangwu/Project/calculator/tmp/unicorn_padrino.pid`
   ;;
 esac
