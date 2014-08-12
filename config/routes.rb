@@ -56,4 +56,7 @@ Rails.application.routes.draw do
   root :to => "calculate#index"
   get "service/add" => "calculate#add"
   get "service/del" => "calculate#del"
+  get "service/mul" => "calculate#mul"
+  get "service/div" => "calculate#div"
+
 end

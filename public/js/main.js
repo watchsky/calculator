@@ -11,8 +11,20 @@ function getResult() {
         $("#result").html(data.result);
       }
     });
-  } else {
+  } else if(operator === "-") {
     $.ajax({url: "/service/del", data: query, dataType: "json",
+      success: function(data) {
+        $("#result").html(data.result);
+      }
+    });
+  } else if(operator === "x") {
+    $.ajax({url: "/service/mul", data: query, dataType: "json",
+      success: function(data) {
+        $("#result").html(data.result);
+      }
+    });
+  } else {
+    $.ajax({url: "/service/div", data: query, dataType: "json",
       success: function(data) {
         $("#result").html(data.result);
       }
