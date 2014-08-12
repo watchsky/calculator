@@ -1,6 +1,6 @@
 == README
 
-====Rails部署Workshop
+====学习如何部署Rails App
 
 一个简单地web计算器，用于练习如何部署Rails应用。先用unicorn和Apache+passenger分别部署整个Rails App;  
 最后再改用nginx做反向代理，Rails应用的主页由nginx代理转发到Apache+passenger部署的server，而实现计算  
