@@ -2,10 +2,7 @@
 
 ====学习如何部署Rails App
 
-一个简单地web计算器，用于练习如何部署Rails应用。部署环境：Ubuntu 14.04.1 LTS。先用unicorn和Apache+passenger分别部署整个Rails App;
-最后再改用nginx做反向代理，Rails应用的主页由nginx代理转发到Apache+passenger部署的server，而实现计算功能的请求由nginx转发到unicorn 
-server上处理，app用到的静态文件（image、js、css）直接由nginx响应请求。部署结构图在public/images/structure.jpg里。感兴趣的同学可以
-把代码下下来练习一下。
+一个简单地web计算器，用于练习如何部署Rails应用。部署环境：Ubuntu 14.04.1 LTS。先用unicorn和Apache+passenger分别部署整个Rails App; 最后再改用nginx做反向代理，Rails应用的主页由nginx代理转发到Apache+passenger部署的server，而实现计算功能的请求由nginx转发到unicorn server上处理，app用到的静态文件（image、js、css）直接由nginx响应请求。[部署结构图](https://github.com/watchsky/calculator/blob/master/public/images/structure.jpg)。
 
 * Unicorn + Rails（reference  https://github.com/defunkt/unicorn）
  1）gem install unicorn
